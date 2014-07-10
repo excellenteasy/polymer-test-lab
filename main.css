@@ -1,0 +1,28 @@
+body {
+  font-weight: 300;
+  font-family: 'Roboto', 'Helvetica Neue',  'Arial', sans-serif;
+}
+
+h2, h3 {
+  font-weight: 300;
+  margin: 0;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+}
+
+core-toolbar {
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
+  background-color: rgb(79, 125, 201);
+}
+
+core-header-panel {
+  display: block;
+  height: 100%;
+}

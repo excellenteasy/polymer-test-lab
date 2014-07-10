@@ -1,0 +1,87 @@
+<polymer-element name="om-card" attributes="zHover" on-mouseover="{{onMouseOver}}" on-mouseout="{{onMouseOut}}">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background: white;
+        width: 400px;
+        height: auto;
+        position: relative;
+        border-radius: 2px;
+      }
+
+      @media all and (max-width: 400px) {
+        :host {
+          width: 275px;
+        }
+      }
+
+      polymer-next-selector { content: ':host img'; }
+      ::content img {
+        object-fit: cover;
+        /*object-position: 50% 100%;*/
+        width: 100%;
+        height: 250px;
+        border-radius: inherit;
+      }
+
+      polymer-next-selector { content: ':host .heading'; }
+      ::content .heading {
+        margin-bottom: 35px;
+        color: #6a45b7;
+      }
+
+      polymer-next-selector { content: ':host .heading'; }
+      ::content paper-fab {
+        background: rgb(79, 125, 201);;
+      }
+
+      #cardcontent {
+        padding: 25px;
+      }
+
+      paper-ripple {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 250px;
+        color: white;
+      }
+
+      paper-fab ::shadow {
+
+      }
+    </style>
+    <content id="c" select="img"></content>
+    <div id="cardcontent"><content></content></div>
+    <template if="{{hasImage}}">
+      <paper-ripple class="recenteringTouch"></paper-ripple>
+    </template>
+    <paper-shadow target="{{}}" z="{{zReal}}" animated></paper-shadow>
+  </template>
+  <script>
+    Polymer('om-card', {
+      zHover: null,
+      hasImage: false,
+      publish: {
+        z: {value: 1, reflect: true},
+      },
+      ready: function() {
+        this.zReal = this.z;
+        this.hasImage = this.$.c.getDistributedNodes().length;
+      },
+      onMouseOver: function(e, detail, sender) {
+        if (this.zHover != null) {
+          this.zReal = this.zHover;
+        }
+      },
+      onMouseOut: function(e, detail, sender) {
+        if (this.zHover != null) {
+          this.zReal = this.z;
+        }
+      }
+    });
+  </script>
+</polymer-element>

@@ -1,0 +1,29 @@
+{
+  "name": "polymer-test-lab",
+  "version": "0.0.0",
+  "description": "A place for mad scientists to pounder on Polymer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:excellenteasy/polymer-test-lab.git"
+  },
+  "keywords": [
+    "polymer"
+  ],
+  "author": "David Pfahler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/excellenteasy/polymer-test-lab/issues"
+  },
+  "homepage": "https://github.com/excellenteasy/polymer-test-lab",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-watch": "^0.6.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1"
+  }
+}
